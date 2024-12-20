@@ -8,7 +8,7 @@ certifi==2024.8.30
 charset-normalizer==3.4.0
 coverage==7.6.2
 crispy-bootstrap5==2024.10
-Django==5.1.2
+Django==5.1.4
 django-cors-headers==4.6.0
 django-crispy-forms==2.3
 django-redis==5.4.0
