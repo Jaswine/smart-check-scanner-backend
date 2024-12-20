@@ -6,11 +6,11 @@ A website for analyzing receipts, where you can upload or take a picture of a re
 
 ## 🏁 How to run?
 
->> python3 -m venv .venv
+> python3 -m venv .venv
 
->> source .venv/bin/activate
+> source .venv/bin/activate
 
->> pip install -r requirements.txt
+> pip install -r requirements.txt
 
->> python3 manage.py migrate
->> python3 manage.py runserver
+> python3 manage.py migrate
+> python3 manage.py runserver
