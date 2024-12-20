@@ -18,7 +18,7 @@ A website for analyzing receipts, where you can upload or take a picture of a re
 
 ## Documentation
 
-After running the project you can see the documentation the documentation here:
+After running the project, you can view the documentation here:
 
 **_Swagger_**: 
 
