@@ -16,7 +16,7 @@ A website for analyzing receipts, where you can upload or take a picture of a re
 
 > python3 manage.py runserver
 
-## Documentation
+## 📑 Documentation
 
 After running the project, you can view the documentation here:
 
