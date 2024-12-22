@@ -137,7 +137,7 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,
 }
 
-GOOGLE_TOKEN = os.getenv('GOOGLE_TOKEN', '')
+GOOGLE_TOKEN = os.getenv('GOOGLE_TOKEN')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
