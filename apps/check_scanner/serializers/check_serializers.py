@@ -16,7 +16,7 @@ class CheckSerializer(BaseCheckSerializer):
         Serializer for Check model.
     """
     class Meta(BaseCheckSerializer.Meta):
-        fields = BaseCheckSerializer.Meta.fields + ('recommendations', 'status', 'created_at',)
+        fields = BaseCheckSerializer.Meta.fields + ('id', 'recommendations', 'status', 'created_at',)
 
 class CreateCheckSerializer(BaseCheckSerializer):
     """

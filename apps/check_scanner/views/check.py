@@ -1,10 +1,10 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_REQUEST, HTTP_204_NO_CONTENT
 
 from apps.check_scanner.serializers.check_serializers import CheckSerializer, CreateCheckSerializer
-from apps.check_scanner.services.check_services import fild_all_checks, check_handling
+from apps.check_scanner.services.check_services import fild_all_checks, check_handling, delete_check
 from apps.check_scanner.utils.cache_utils import get_cache, set_cache, delete_cache_by_pattern
 from apps.check_scanner.utils.paginator_util import create_paginator
 from config import settings
@@ -50,3 +50,13 @@ def list_create_check_view(request):
         return Response({
             'message': 'Failed to create check'
         }, status=HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def delete_check_view(request, id: int):
+    """
+        Delete check by id
+    """
+    delete_check(id)
+    delete_cache_by_pattern(f'check_list_{request.user.username}')
+    return Response('', status=HTTP_204_NO_CONTENT)

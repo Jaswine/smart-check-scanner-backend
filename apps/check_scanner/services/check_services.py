@@ -81,3 +81,16 @@ def check_handling(user: User, file) -> Check | None:
         return check
     check_save_generated_text(check)
     return None
+
+def delete_check(id: int) -> None:
+    """
+        Delete a check by ID from the database
+        :param id: int - ID of the check to delete
+        :return: None
+    """
+    try:
+        check = Check.objects.get(id=id)
+        print("Check:", check)
+        check.delete()
+    except Exception as e:
+        print(f"Error deleting check: {e}")

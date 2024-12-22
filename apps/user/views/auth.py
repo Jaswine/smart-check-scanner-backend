@@ -14,6 +14,7 @@ def sign_in_view(request):
     """
         Endpoint for user login
     """
+    print('serializer')
     serializer = UserSignInSerializer(data=request.data)
     if not serializer.is_valid():
         return Response(serializer.errors,
@@ -25,6 +26,7 @@ def sign_in_view(request):
         return Response({
             'message': 'User not found!'
         }, status=HTTP_401_UNAUTHORIZED)
+
 
     if not user_check_password_by_user(user,
                                        serializer.validated_data.get('password')):
@@ -44,6 +46,7 @@ def sign_up_view(request):
     """
         Endpoint for user registration
     """
+    print('serializer')
     serializer = UserSignUpSerializer(data=request.data)
     if not serializer.is_valid():
         return Response(serializer.errors,
